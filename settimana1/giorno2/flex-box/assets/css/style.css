@@ -1,0 +1,149 @@
+Html, body {
+    /* Margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-giallo {
+    background-color: rgb(244, 244, 184);
+    margin: 7px;
+    padding: 8px;
+    border-radius: 10px;
+
+}
+
+img {
+    width: 20px;
+    height: auto;
+}
+
+
+.menu {
+    background-color: rgb(225, 165, 54);
+    /* border: 2px solid red; */
+    width: 60px;
+    /* margin-bottom: 10px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 0px grey;
+}
+
+/*FLEXBOX*/
+
+.container-giallo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.bigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    width: 90px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 900;
+}
+
+.menu{
+    text-align: center;
+}
+
+
+/*=============CARD==============*/
+main{
+    padding: 30px;
+    /* background-color: aqua; */
+}
+.card{
+    /* margin:7px; */
+    background-color: rgb(244, 244, 184);
+    width: 200px;
+    height: auto;
+    /* border: 2px solid black; */
+    border-radius: 30%;
+    overflow: hidden;
+    padding-bottom: 10px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#immagine{
+    width: 100%;
+    height: 65%;
+}
+
+.cont{
+    /* padding-top: 6px;
+    padding-bottom: 6PX; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* margin-left: 1em;
+    margin-right: 1em; */
+}
+.container-text{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+button{
+    background-color: orange;
+    margin: 0 auto;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    border: transparent;
+    box-shadow: 3px 3px 3px 0px grey;
+}
+
+.prezzo{
+    align-self: center;
+    font-weight: 700;
+    color: brown;
+}
+
+.proprieta{
+    font-weight: 700;
+    color: brown;
+}
+
+span{
+    font-weight: 200;
+}
+
+@media screen and (max-width: 520px) {
+    .container-text {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;    
+    }
+};
