@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rotate{
+            background-color: rgb(102, 217, 102);
+            transform: rotate(30deg); /*ruota elemento di tot gradi in questo caso 30deg*/
+        }
+
+        .skew{
+            background-color: rgb(190, 135, 242);
+            transform: skew(10deg, 30deg);
+        }
+
+        .scale {
+            background-color: aqua;
+            transform: scale(); /*aumenta la grandezza */
+        }
+
+        .translate{
+            background-color: brown;
+            transform: translate(50px, 25px);
+        }
+
+        .multiple{
+            background-color: aquamarine;
+            transform: scale(1.2) rotate(30deg) translate(50px, 100px);
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>PROPRIETA' CSS TRANSFORM</h2><br>
+
+    <h4>ROTATE</h4>
+    <div class="box rotate">
+        <div>ROTATE</div>
+    </div>   
+
+    <br><br>
+    
+    <h4>SKEW (significa storgere)</h4>
+    <div class="box skew">
+        <div>SKEW</div>
+    </div>
+
+    <br><br>
+
+    <h4>SCALE</h4>
+    <div class="box scale">
+        <div>SCALE</div>
+    </div>
+
+    <h4>TRANSLATE</h4>
+    <div class="box translate">
+        <div>TRANSLATE</div>
+    </div>
+
+
+    <h4>MULTIPLE</h4>
+    <div class="box multiple">
+        <div>MULTIPLE</div>
+    </div>
+</body>
+</html>

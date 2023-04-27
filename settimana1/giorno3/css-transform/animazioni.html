@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-1{
+            background-color: orange;
+            animation: boxAnimation 3s ease 0s infinite;
+        }
+
+        .box-2{
+            background-color: pink;
+        }
+
+        .animated{
+            /*questa classe se aggiunta al box-2, lo farà muovere*/
+            animation: animateMe 4s linear infinite;
+        }
+
+        @keyframes boxAnimation {
+            0%{
+                transform: translate(0px);
+                background-color: orange;
+            }
+            
+            50%{
+                transform: translate(300px);
+                background-color: green; /*è il punto di arrivo*/
+            }
+
+            100%{
+                transform: translate(0px);
+                background-color: orange; /*torna indietro*/
+            }
+            
+        }
+
+
+        @keyframes animateMe {
+            0%{
+                color: black;
+                background-color: pink;
+                font-size: 1em;
+            }
+            50%{
+                color: white;
+                background-color: orchid;
+                font-size: 2em;
+            }
+            100%{
+                color: black;
+                background-color: pink;
+                font-size: 1em;
+            }
+            
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <h2>ANIMAZIONI</h2>
+    <div class="box box-1">
+        <div>I'M A BOX</div>
+    </div>
+
+    <button onclick="startStop()">CLICK</button>
+    <div class="box box-2">
+        <div>ONCLICK</div>
+    </div>
+
+    <script>
+        /*voglio che al click sul button nel box-2 si aggiunga la classe animated*/
+        const startStop = function () {
+            /*devo aggiungere o togliere la classe animated dal box-2*/
+            /*due passaggi: selezionare l'emento, agire sull'elemento*/
+            //Passaggio 1: prendo un riferimento al box-2
+            let box2Reference = document.querySelector('.box-2');
+            box2Reference.classList.toggle('animated');
+            //classList è una proprietà che attraverso una serie di metodi che si aggiungono dopo mi permette di aggiungere una classe o rimuoverla. toggle mi aggiunge la classe animated se non c'è, e la toglie se c'è.
+        }
+
+    </script>
+</body>
+</html>

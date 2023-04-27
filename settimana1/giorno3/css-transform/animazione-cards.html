@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animazione Cards - Ripasso di tutto quello che abbiamo fatto </title>
+    <style>
+        body, html{
+            height: 100%; /*il body e html occupano tutto lo schermo*/
+        }
+
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        h3{
+            margin: 0;
+        }
+
+        #cards article{
+            width: 200px; /*larghezza cards*/
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px; 
+            /* background-color: rgb(99, 89, 89); */
+            color: white;
+            position: relative;
+            transition: all 1s linear;
+        }
+
+        #cards{
+            display: flex;
+        }
+        #container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #card-1{
+            transform: rotate(-15deg) translate(30px, 50px); /*ruotato e spostato*/
+            z-index: 1;
+            
+        }
+
+        #card-2{
+            z-index: 2;
+        }
+
+        #card-3{
+            transform: rotate(15deg) translate(-30px, 50px);/*ruotato e spostato*/
+            z-index: 3;
+        }
+
+        /*proprietà z-index: modifica l'asse z degli elementi e permette giocare sulla profondità. In questo caso mi serve per fare evergere la card 3 sulla 2 che emerge sulla 1. Gli assegno un valore più alto per chi sta sopra. Per poterlo mettere devo mettere il position */
+
+        #cards article:hover{
+            z-index: 4;
+            background-color: rgb(225, 159, 16) !important; /*metto important per vincere sul JS che crea colori di background random*/ 
+            color: black;
+            transform: scale(1.3) rotate(0deg); /*quando hover la card si ingrandisce e ruota e diventa dritta*/
+
+        }
+
+        /*all'hover cambia il colore del testo, dello sfondo e di z-index*/
+
+
+    </style>
+</head>
+<body>
+    <main id="container"> <!--Ci serve per centrare le carte-->
+        <div id="cards">
+            <article id="card-1">
+                <h3>Card 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, pariatur suscipit at tempora error eveniet repellendus a quam molestiae, rerum, minus repudiandae libero nemo facere tenetur modi id voluptas deleniti?</p>
+            </article>
+
+            <article id="card-2">
+                <h3>Card 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, id eaque. Aperiam voluptatem assumenda, velit aliquid eius ipsum incidunt magni. Inventore corrupti voluptas blanditiis similique tempore excepturi officiis perspiciatis repellat.</p>
+            </article>
+
+            <article id="card-3">
+                <h3>Card 3</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore neque magni et vitae dicta officiis illum earum dolor fuga pariatur sequi explicabo harum, ipsum ratione hic quaerat voluptate minus reprehenderit!</p>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        let articleReferenceArray = document.getElementsByTagName('article')
+        
+        for(let i=0; i<articleReferenceArray.length; i++){
+            articleReferenceArray[i].style.backgroundColor = '#' + ((Math.random() * 0xffffff)<<0).toString(16).padStart(6, '0')
+        //formula per generare colori random
+        } 
+
+    </script>
+</body>
+</html>
