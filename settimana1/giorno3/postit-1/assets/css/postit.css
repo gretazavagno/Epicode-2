@@ -18,7 +18,7 @@ html, body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
-    gap: 10px; /*mi permette di spaziare in altezza quando vanno a capo*/
+    gap: 2em; /*mi permette di spaziare in altezza quando vanno a capo*/
 }
 
 
@@ -41,6 +41,8 @@ html, body{
     background-color: rgb(239, 239, 141);
     background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
     transform: rotate(-10deg);
+    animation: waterfalldeg7 2s;
+    
 
 }
 
@@ -48,6 +50,7 @@ html, body{
     background-color: rgb(145, 251, 145);
     background-image: linear-gradient(to top, rgba(67, 67, 67, 0.5) 0%, rgba(0,0,0,0) 50%);
     transform: rotate(10deg);
+    animation: waterfalldeg10 1s;
 
 
 }
@@ -56,6 +59,7 @@ html, body{
     background-color: rgb(206, 151, 206);
     background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
     transform: rotate(-10deg);
+    animation: waterfalldeg15minus 1.5s;
 
 }
 
@@ -69,3 +73,79 @@ html, body{
 
 
 /*backwards andare a vedere per far comparire le cose al momento del caricamento della pagina*/
+
+
+/*=========================ANIMAZIONE DELLE CARTE APPENA CARICA LA PAGINA=========================*/
+
+
+@keyframes waterfalldeg7 {
+    0% {
+        
+        transform: translateY(-600px) rotate(-360deg) scale(1.6);
+        
+    }
+    100% {
+        transform: translateY(0) rotate(-7deg);
+        
+    }
+}
+
+@keyframes waterfalldeg10 {
+    0% {
+        transform: translate(700px, -600px) rotate(360deg) scale(1.2);
+        
+    }
+    100% {
+        transform: translateY(0) rotate(-10deg);
+        
+    }
+}
+
+@keyframes waterfalldeg15minus {
+    0% {
+        transform: translate(-450px, 800px) rotate(360deg) scale(2);
+        
+    }
+    100% {
+        transform: translateY(0) rotate(15deg);
+        
+    }
+}
+
+/*=========================ESERCIZIO 2=========================*/
+
+#esercizio2 {
+    border: 3px solid black;
+    margin-top: 4em;
+    padding: 1em;
+}
+
+#phrases {
+    color: goldenrod;
+    font-family: 'Architects Daughter', cursive;    
+}
+
+#phrases::before {
+    content: "Single page app";
+    animation: animate 3s ease-in-out infinite;
+    padding-left: 10px;
+}
+
+
+
+@keyframes animate {
+  
+    0% {
+        content: "Single page app";
+        transform: translate(-100%);
+    }
+
+    50% {
+        content: "Interfacce web";
+    }
+
+    75% {
+        content: "App native";
+    }
+}
+
