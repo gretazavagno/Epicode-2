@@ -1,0 +1,13 @@
+@mixin fadeIn ($durata, $velocità, $delay, $repeat, $fill){
+    @keyframes animazione {
+        0%{
+            transform: translate(0, -600px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+    animation: animazione $durata $velocità $delay $repeat $fill;
+}

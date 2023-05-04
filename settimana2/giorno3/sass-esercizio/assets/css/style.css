@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  background-color: #640fc5;
+  color: #f4f4f4;
+  animation: animazione 2s;
+}
+.hero .btn1 {
+  background-color: #0e6cff;
+}
+.hero .btn2 {
+  background-color: #ff8700;
+}
+.hero .btn3 {
+  background-color: #4caf50;
+}
+.hero button {
+  border-radius: 5px;
+  border: 1px solid trasparent;
+  color: #f4f4f4;
+  padding: 6px 10px;
+  transition: transform 1s;
+}
+
+button:hover {
+  transform: scale(1.2, 1.2);
+}
+
+@keyframes animazione {
+  0% {
+    transform: translate(0, -600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
