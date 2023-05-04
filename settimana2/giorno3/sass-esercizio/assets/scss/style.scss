@@ -1,0 +1,50 @@
+@import "./partials/reset";
+@import "./partials/colors";
+@import "./partials/buttons";
+@import "./partials/spacing";
+@import "./partials/animations";
+
+
+.hero {
+    background-color: $bgColor;
+    color: $textColor;
+    animation: animazione 2s;
+
+    .btn1{
+        background-color: $btn1_color;
+    }
+    .btn2{
+        background-color: $btn2_color;
+    }
+    .btn3{
+        background-color: $btn3_color;
+    }
+    button{
+        border-radius: $radius;
+        border: $border;
+        color: $textColor;
+        padding: $padding;
+        transition: transform 1s;
+    }
+}
+
+button:hover{
+    transform: scale(1.2, 1.2);
+}
+
+@keyframes animazione {
+    0%{
+        transform: translate(0, -600px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
