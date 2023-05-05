@@ -1,0 +1,66 @@
+@import "./partials/colors"; 
+
+@media screen and (max-width: 900px){
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ok{
+        display: block;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+    .ok .row {
+        justify-content: flex-start;
+    }
+    main div .last {
+        display: none;
+    }
+}
+
+header{
+    margin: 0;
+}
+
+.header-purple{
+    background-color: #7550fe;
+}
+
+div .purple {
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+main {
+    background-color:#f5f4f8;
+    padding: 50px 20px;
+}
+
+/*-----------------------------Button--------------------------*/
+.btngreen {
+    background-color: #1acb98;
+    color: white;
+}
+
+.btnwhite{
+    color: #1acb98;
+}
+
+div button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/*----------------------------------------------------------*/
+
+#headline {
+    display: flex;
+    justify-content: space-around;
+}
+
+div .ok .item1::before {
+    content: "\f007";
+}
+
+
