@@ -1,0 +1,342 @@
+@charset "UTF-8";
+/*-----------METTERE ICONA DENTRO CERCHIO------------*/
+/*-----------METTERE IMMAGINI DENTRO CERCHIO------------*/
+.navbar {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*----------------------ICONA NOTIFICHE e IMMAGINE UTENTE------------------------------------*/
+.icon-notify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #cac9cb;
+  color: white;
+  font-size: 26px;
+}
+
+.round-button {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background-image: url("/bozza-progetto/assets/img/avatar-1.jpg");
+  background-size: cover;
+  background-position: center;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.online-status {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+  font-size: 8px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: rgb(6, 160, 6);
+  z-index: 4;
+}
+
+.notify-status {
+  position: absolute;
+  bottom: 40px;
+  right: 7px;
+  font-size: 8px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: rgb(236, 153, 59);
+  z-index: 4;
+}
+
+/*-------------------------------------ICONE VICINO A USER NAVBAR-----------------------------------*/
+.item-1 {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+}
+.item-1::before {
+  content: "\f007";
+  display: inline-block;
+  margin-right: 7px;
+  background-image: url("\f007");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.item-2 {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+}
+.item-2::before {
+  content: "\f005";
+  display: inline-block;
+  margin-right: 7px;
+  background-image: url("\f005");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.item-3 {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+}
+.item-3::before {
+  content: "\f013";
+  display: inline-block;
+  margin-right: 7px;
+  background-image: url("\f013");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.item-4 {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 1rem;
+}
+.item-4::before {
+  content: "\f011";
+  display: inline-block;
+  margin-right: 7px;
+  background-image: url("\f011");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.headline-container {
+  margin-bottom: 20px;
+}
+
+.hero-container {
+  background-color: #7550fe;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+p .hero {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.text-container p {
+  font-size: 1.5em;
+}
+
+.custom-button-green {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  font-weight: 200;
+  text-align: center;
+  color: white;
+  background-color: #1acb98;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+}
+.custom-button-green:hover {
+  background-color: #1acb98, 10%;
+}
+.custom-button-green:active {
+  transform: translateY(1px);
+  background-color: #1acb98, 20%;
+}
+
+.custom-button-white {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  font-weight: 200;
+  text-align: center;
+  color: #1acb98;
+  background-color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+}
+.custom-button-white:hover {
+  background-color: white, 10%;
+}
+.custom-button-white:active {
+  transform: translateY(1px);
+  background-color: white, 20%;
+}
+
+.btn-container {
+  white-space: nowrap; /* Impedisce la separazione dei bottoni su più righe */
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+
+.btn-container button {
+  display: inline-block;
+  /* Impedisce il ritorno a capo e consente ai bottoni di stare sulla stessa riga */
+  margin-right: 10px;
+  /* Aggiunge un po' di spazio tra i bottoni */
+}
+
+main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.recommended {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0;
+  padding-left: 0;
+  gap: 4px;
+}
+
+.col-card {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.recommended {
+  margin-bottom: 50px;
+}
+
+.popular {
+  margin-bottom: 50px;
+}
+
+div .card-text {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar {
+    height: auto; /* altezza navbar quando si stringe schermo si adatta */
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+  .img-container {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    text-align: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: inline-block;
+    padding-top: 50px;
+  }
+  .text-container {
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+  }
+  .text-container p {
+    font-size: 1.5em;
+  }
+  .img-hero {
+    max-width: 100%;
+    height: auto;
+  }
+  .custom-button-green {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    font-weight: 200;
+    text-align: center;
+    color: white;
+    background-color: #1acb98;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 50px;
+  }
+  .custom-button-green:hover {
+    background-color: #1acb98, 10%;
+  }
+  .custom-button-green:active {
+    transform: translateY(1px);
+    background-color: #1acb98, 20%;
+  }
+  .custom-button-white {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    font-weight: 200;
+    text-align: center;
+    color: #1acb98;
+    background-color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 50px;
+  }
+  .custom-button-white:hover {
+    background-color: white, 10%;
+  }
+  .custom-button-white:active {
+    transform: translateY(1px);
+    background-color: white, 20%;
+  }
+  .last {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

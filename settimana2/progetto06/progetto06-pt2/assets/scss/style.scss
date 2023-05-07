@@ -1,0 +1,257 @@
+@import "./partials/mixins";
+@import "./partials/colors";
+@import "./partials/icons";
+
+.navbar {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+/*----------------------ICONA NOTIFICHE e IMMAGINE UTENTE------------------------------------*/
+// .icon-notify {
+//     @include icon-circle($notify-icon, 52px);
+//   }
+
+.fe-video{
+  @include icon-circle(green, 52px);
+}
+
+
+.round-button {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-image: url('/bozza-progetto/assets/img/avatar-1.jpg');
+    background-size: cover;
+    background-position: center;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  //____________________________________PALLINO ONLINE RISPETTO A ROUND-BUTTON
+  .online-status{
+    position: absolute;
+    bottom: 0px;
+    right:3px;
+    font-size: 8px;
+    border: 3px solid  white;
+    border-radius: 50%;
+    color: rgb(6, 160, 6);
+    z-index: 4;
+  }
+
+  .notify-status{
+    position: absolute;
+    bottom: 40px;
+    right: 7px;
+    font-size: 8px;
+    border: 3px solid  white;
+    border-radius: 50%;
+    color: rgb(236, 153, 59);
+    z-index: 4;
+  }
+
+/*-------------------------------------ICONE VICINO A USER NAVBAR-----------------------------------*/
+
+.item-1 {
+    @include icon-with-text($user, #000, 20px);
+  }
+.item-2{
+    @include icon-with-text($star, #000, 20px);
+}
+.item-3{
+    @include icon-with-text($setting, #000, 20px);
+}
+.item-4{
+    @include icon-with-text($off, #000, 20px);
+}
+  
+//____________________________________________IMMAGINE HERO______________________________________
+
+.headline-container{
+  margin-bottom: 20px;
+}
+
+.hero-container{
+  background-color: $purple;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+
+.img-container {  
+  img {
+    @include fill-container;
+  }
+}
+
+//____________________________________________BUTTON HERO E TESTO HERO______________________________________
+
+p .hero{
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.text-container p{
+  font-size: 1.5em;
+}
+.custom-button-green {
+  @include button($green, 200px, 50px, $white);
+}
+
+.custom-button-white {
+  @include button($white, 200px, 50px, $green);
+}
+
+.btn-container {
+  white-space: nowrap;   /* Impedisce la separazione dei bottoni su più righe */
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+
+.btn-container button {
+  display: inline-block;
+  /* Impedisce il ritorno a capo e consente ai bottoni di stare sulla stessa riga */
+  margin-right: 10px;
+  /* Aggiunge un po' di spazio tra i bottoni */
+}
+
+//__________________________________________________________________________MAIN__________________________________________________________________________________
+
+main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.recommended {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0;
+  padding-left: 0;
+  gap: 4px;
+}
+
+.col-card{
+  width: fit-content;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.card{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card:last-child{
+  margin-right: 0;
+}
+
+
+.recommended{
+  margin-bottom: 50px;
+}
+
+.popular{
+  margin-bottom: 50px;
+}
+
+div .card-text {
+  font-weight: 500;
+}
+
+.headline-container div {
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//________________________________________________________________________________________________________________________________________________________________________
+//   ADATTAMENTO A GRADNEZZA SCREEN
+//________________________________________________________________________________________________________________________________________________________________________
+
+@media screen and (max-width: 992px) {
+  .navbar {
+      height: auto; /* altezza navbar quando si stringe schermo si adatta */
+  }
+
+  .navbar-collapse {
+      position: absolute;
+      top: 60px; 
+      left: 0;
+      right: 0;
+  }
+  .hero-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+  .img-container{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    object-fit: cover;
+    display: inline-block;
+    padding-top: 50px;
+  }
+  .text-container{
+    width: 100%;
+    text-align:left;
+    display: inline-block;
+  }
+
+  .text-container p{
+    font-size: 1.5em;
+  }
+
+  .img-hero{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .custom-button-green {
+    @include button($green, fit-content, 50px, $white);
+  }
+  
+  .custom-button-white {
+    @include button($white, fit-content, 50px, $green);
+  }
+
+  .last{
+    display: none;
+  }
+
+  .headline-container {
+    display: block;
+    justify-content: flex-start;
+  }
+
+  .ok .row {
+    justify-content: flex-start;
+  }
+
+}
+
