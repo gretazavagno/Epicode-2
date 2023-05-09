@@ -1,0 +1,16 @@
+{
+  "name": "Stefano",
+  "surname": "Miceli",
+  "age": 34,
+  "teacher": true,
+  "area": {
+    "region": "FVG",
+    "latitude": 34.109123,
+    "longitude": 12.09123
+  },
+  "skills": [
+    { "name": "CSS", "rating": 10 },
+    { "name": "HTML", "rating": 10 },
+    { "name": "JS", "rating": 9 }
+  ]
+}

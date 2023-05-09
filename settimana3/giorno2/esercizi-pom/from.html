@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage e SessionStorage</title>
+</head>
+<body>
+    <!--Crea un semplice form di registrazione con un input field in cui l'utente possa inserire il proprio nome. A fianco di questo input field crea due pulsanti: uno salverà il valore in un localStorage e uno rimuoverà il valore precedentemente salvato se presente. Mostra sopra l'input field il valore precedentemente salvato, se presente. -->
+
+    <h1>Registrazione utente</h1>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary" id="save">Salva</button>
+            <button type="submit" class="btn btn-primary" id="remove">Rimuovi</button>
+        </div>
+    </form>
+    <br>
+    <div>
+        <label for="saved-name">Nome salvato:</label>
+        <span id="saved-name"></span>
+    </div>
+
+    
+    <script src="form.js"></script>
+</body>
+</html>
