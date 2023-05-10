@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Chiamata telefonica</h2>
+
+
+
+    <script>
+        const answer = function (num) {
+            console.log("📞 Pronto? Chi è?", "ci ho messo " + num / 1000 + "s")
+        }
+        const grannysAnswer = function (num) {
+            console.log("📞📺 Hai mangiatooh??? Ti vedo sciupato", "ci ho messo " + num / 1000 + "s")
+        }
+
+
+        const phoneCall = function (myCustomFunction) {
+            const randTime = Math.floor(Math.random() * 3000)
+
+            setTimeout(() => {
+                myCustomFunction(randTime) // una volta sarà answer(), l'altra volta sarà grannysAnswer(), l'ultima sarà (() => {})()
+            }, randTime)
+            // setTimeout è un'operazione asincrona
+
+            console.log("☎️ Il telefono sta squillando...")
+        }
+
+        phoneCall(answer)
+        phoneCall(grannysAnswer)
+        phoneCall((num) => console.log("🤳 Ciao Bro!", "ci ho messo " + num / 1000 + "s"))
+
+
+
+        const myPromise = () => new Promise((resolve, reject) => {
+            const randTime = Math.floor(Math.random() * 3000)
+            const randTime2 = Math.floor(Math.random() * 3000)
+
+            setTimeout(() => {
+                resolve("SUCCESS!!! " + randTime)
+            }, randTime)
+
+            setTimeout(() => {
+                reject("REJECT!!! " + randTime2)
+            }, randTime2)
+        })
+
+        myPromise()
+            .then(resolveMessage => console.log(resolveMessage))
+            .catch(errMessage => console.warn(errMessage))
+
+
+        const timer = (ms) => new Promise((resolve, reject) => {
+            if (ms >= 1000) {
+                setTimeout(() => {
+                    resolve("TIMER SUCCESS!!! " + ms)
+                }, ms)
+            } else {
+                reject("TIMER REJECTED!!! " + ms)
+            }
+        })
+
+        // timer(2000)
+        //     .then(successMessage => console.log("1", successMessage))
+        //     .then(() => timer(900))
+        //     .then(successMessage => console.log("2", successMessage))
+        //     .then(() => timer(1000))
+        //     .then(successMessage => console.log("3", successMessage))
+        //     .catch(errMessage => console.log(errMessage))
+
+        timer(2000)
+            .then(successMessage => {
+                console.log("1", successMessage)
+                return timer(900)
+            })
+            .then(successMessage => {
+                console.log("2", successMessage)
+                return timer(1000)
+            })
+            .then(successMessage => console.log("3", successMessage))
+            .catch(errMessage => console.log(errMessage))
+    </script>
+</body>
+
+</html>
