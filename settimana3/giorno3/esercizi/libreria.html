@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria - fetch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<!--Relaizzare una pagina per una lobreria contenente libri derivanti da una chiamata http di tipo GET. 
+
+    Endpoint: https://striveschool-api.herokuapp.com/books
+
+Requisiti della pagina: 
+
+- Utilizza Bootstrap 5 per creare una pagina responsive con una sezione centrale a 3 o 4 colonne per riga
+
+- ogni colonna avrà al suo interno un elemento Card di Bootstrap, creata a partire da un singolo libro: nella 'card image' inserisci la copertina del libro, nella 'card body' il suo titolo e il suo prezzo.
+
+- Sempre nel 'card body' inserisci un pulsante 'Scarta'. Se premuto dovrà far scomparire la card dalla pagina.
+
+- Crea una lista che rappresenti il carrello del negozio e inseriscila dove vuoi nella pagina. AGgiungi un altro pulsante 'Compra ora' vicino a 'Scarta' nelle card per aggiungere il libro nel carrello. Il carrello dovrà persistere nello storage del browser.-->
+<body>
+
+    <h1>Libreria</h1>
+    <div id="book-list"></div>
+
+  
+    <script src="libreria.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
