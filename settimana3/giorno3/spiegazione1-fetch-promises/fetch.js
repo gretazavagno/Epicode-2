@@ -14,6 +14,7 @@
 fetch('https://jsonplaceholder.typicode.com/stefano')
   .then((res) => {
     console.log(res)
+    //il nome della funzione dentro la fetch è quello che vogliamo dare al risultato della fatch
     // qui dentro effettuo tutte le operazioni che voglio fare con la response
     // cosa possiede res?
     // .ok <-- la proprietà ok riassume in un booleano se l'operazione è andata a buon fine
