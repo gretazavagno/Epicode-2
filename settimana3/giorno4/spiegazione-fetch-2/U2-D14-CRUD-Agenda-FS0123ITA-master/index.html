@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD Agenda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto d-flex flex-grow-1 mb-2 mb-lg-0">
+                    <li class="nav-item me-auto">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./backoffice.html">Backoffice</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="display-4">Prossimi appuntamenti</h2>
+                <ul id="appointment-list" class="list-group">
+                    <!-- GLI ELEMENTI DELLA LISTA VERRANNO CREATI QUI PROGRAMMATICAMENTE -->
+
+                    <!-- questo loader verrà nascosto dal blocco finally quando arrivano gli elementi dinamici o nel caso di un errore -->
+                    <div class="spinner-grow text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        // la fetch da sola fa già una richiesta HTTP di tipo GET(implicito)
+        // fetch("https://striveschool-api.herokuapp.com/api/agenda/")
+        //     .then(resp => {
+        //         console.log(resp)
+        //         if (resp.ok) {
+        //             return resp.json() // parsa il body e ci torna un formato usabile nel parametro della prossima callback
+        //         }
+        //     })
+        //     .then(appointments => {
+        //         // a questo punto abbiamo 1. ottenuto i dati; 2. li abbiamo convertiti in un formato usabile; 3. siamo pronti ad utilizzarli
+        //         // qui dentro possiamo farci quello che vogliamo, come ad esempio visualizzarli sulla pagina!
+        //         const list = document.getElementById("appointment-list")
+        //         appointments.forEach(el => {
+        //             const li = document.createElement("li")
+        //             li.className = "list-group-item d-flex justify-content-between"
+        //             li.innerHTML = `<span>${el.name}</span> <span class="badge text-bg-dark">${el.price}€</span>`
+        //             list.appendChild(li)
+        //         })
+        //     }).catch(err => console.log(err))
+
+        // ASYNC / AWAIT è utilizzabile solo all'interno di una funzione dichiarata come asincrona...
+        const fetchData = async () => {
+            console.log("pre")
+            // una volta dichiarata una funzione come async, il suo contesto si comporterà in modo particolare
+            // congelerà tutte le linee di codice successive alla keyword "await"
+            // anche la variabile associata al suo risultato aspetterà a crearsi e solo dopo che la promise diventa "settled" 
+            // verrà creata con l'effettivo valore di ritorno della Promise
+            try {
+                const resp = await fetch("https://striveschool-api.herokuapp.com/api/agenda/")
+                // aspettando la risoluzione di fetch riceviamo il response object dentro la variabile "resp"
+                console.log("RESP", resp)
+
+                if (resp.status === 400) throw new Error("Errore nella richiesta, probabilmente mal formata (400)")
+                if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (404)")
+                if (!resp.ok) throw new Error("Abbiamo un problema con la fetch")
+
+                // il throw è come un return, interrompe in quel punto l'esecuzione del contesto della funzione
+
+
+                const appointments = await resp.json()
+                // anche json è una Promise che va aspettata, useremo anche qui la keyword "await"
+                // per funzioni normali (sincrone) che chiamerai in questo contesto NON SERVE l'"await"
+
+                const list = document.getElementById("appointment-list")
+                appointments.forEach(appointment => {
+                    const li = document.createElement("li")
+                    li.className = "list-group-item d-flex align-items-center"
+                    li.innerHTML = `<span class="me-auto">${appointment.name}</span> <span class="badge text-bg-dark me-3">${appointment.price}€</span> <a href="./details.html?id=${appointment._id}">Vedi dettagli</a>`
+                    list.appendChild(li)
+                })
+                console.log(appointments)
+
+
+                // questo catch fa da gestore di errori singolo, per errori differenti che possono scaturire all'interno del contesto del try
+            } catch (err) {
+                alert("QUI SIAMO NEL CATCH " + err.message)
+            } finally {
+                // settiamo la classe del loader a d-none e quindi si nasconderà
+                document.querySelector(".spinner-grow").classList.add("d-none")
+            }
+
+            console.log("post")
+        }
+
+        window.onload = () => {
+            // occorre chiamare fetchData e far partire l'esecuzione del codice asincrono
+            fetchData() // una funzione async diventa di fatto una Promise che si risolverà come le altre Promise
+            // se avete un valore di ritorno da fetchData, dovrà essere aspettato come una qualasiasi Promise: o con un .then() o con un await
+
+            console.log("LAST OF ONLOAD")
+        }
+
+
+    </script>
+</body>
+
+</html>

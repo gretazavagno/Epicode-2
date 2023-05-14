@@ -1,0 +1,40 @@
+
+@import './partials/animations';
+@import './partials/colors';
+
+body {
+    background-color: $black;
+}
+
+//_____________________________________BUTTON_________________________________________________________________
+
+.backofficeBtn {
+    @include button-hover-animation ($black, $white);
+    border-radius: 5px;
+    background-color: rgb(194, 191, 191);
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 2px 2px rgb(125, 125, 125);
+}
+
+#create-button{
+    @include button-hover-animation ($darkgreen, $white);
+    border-radius: 5px;
+    background-color: $green;
+    color: $black;
+    font-weight: 500;
+    font-size: 20px;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 2px 2px rgb(35, 35, 35);
+    padding: 15px 50px;
+    margin-top: 20px;
+}
+
+// .card .btn-modifica{
+
+// }
+
+// .card .btn-details{
+
+// }
+
+//______________________________________________________________________________________________________

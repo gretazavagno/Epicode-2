@@ -1,0 +1,11 @@
+
+@mixin button-hover-animation ($bg, $text) {
+    transition: all 1s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.1);
+      background-color: $bg; // Colore di sfondo del pulsante al passaggio del mouse
+      color: $text; // Colore del testo del pulsante al passaggio del mouse
+    }
+  }
+  
